@@ -22,17 +22,15 @@ Bash
  ##  Step 1: Create a 500M partition on /dev/sdb
 
 ### **Prerequisites**  
-- At least 2GB RAM and 10GB disk space.
+- At least 2.5GB RAM and 10GB disk space.
 - Add [Hard Disk to Virtual Machine](https://computingforgeeks.com/add-extra-hard-disk-to-virtualbox-vm/).  
 - Root or sudo privileges to create and manage physical volumes, volume groups, and logical volumes. 
 
+<img src="https://github.com/user-attachments/assets/e18690ff-5764-4907-b8a8-0f178dad1592"/> 
 
 ```bash
-# Create a resource group
-az group create --name aks-demo-rg --location eastus
 
-# Create the AKS cluster
-az aks create --resource-group aks-demo-rg --name aks-demo --location eastus2 --node-count 2 --enable-managed-identity --generate-ssh-keys
+
 ```
 
 
