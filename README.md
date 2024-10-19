@@ -141,6 +141,65 @@ df -h
 
 <img src="https://github.com/user-attachments/assets/c476c174-c5d0-4cd8-b78f-610fa19beb01"/>
 
+## Clean up env:
+
+```Bash
+# Unmount the /data filesystem if it's currently mounted
+umount /data
+# Remove the Logical Volume:
+lvremove /dev/vg99/data
+# Remove the Volume Group:
+vgremove vg99
+# Remove the Physical Volume:
+pvremove /dev/sdb1
+# Delete the Partition:
+fdisk /dev/sdb
+# Press d to delete the partition.
+# Select the partition number 1 for /dev/sdb1.
+# Press w to write changes and exit.
+# Verify the Changes:
+lvdisplay
+vgdisplay
+pvdisplay
+lsblk
+
+```
+
+## Part 2: Create Multiple Logical Volumes
+
+```Bash
+# Create Logical Volume music on Volume Group myvg1 (400M, LV: 100M)
+pvcreate /dev/sdb1
+vgcreate myvg1 /dev/sdb1
+lvcreate -n music -L 100M myvg1
+mkfs.ext4 /dev/mapper/myvg1-music
+mkdir /music
+mount /dev/mapper/myvg1-music /music
+
+# Create Logical Volume flowers on Volume Group myvg2 (200M, LV: 150M)
+pvcreate /dev/sdb2
+vgcreate myvg2 /dev/sdb2
+lvcreate -n flowers -L 150M myvg2
+mkfs.ext4 /dev/mapper/myvg2-flowers
+mkdir /garden
+mount /dev/mapper/myvg2-flowers /garden
+
+# Create Logical Volume accounting on Volume Group myvg3 (600M, use all space)
+pvcreate /dev/sdb3
+vgcreate myvg3 /dev/sdb3
+lvcreate -n accounting -l 100%FREE myvg3
+mkfs.ext4 /dev/mapper/myvg3-accounting
+mkdir /accounting
+mount /dev/mapper/myvg3-accounting /accounting
+
+``` 
+
+## Result:
+<img src="https://github.com/user-attachments/assets/e7049d77-278c-47c7-991f-366a19a7911b"/>
+<img src="https://github.com/user-attachments/assets/beee3054-4ef7-461c-bccd-14c8c3d1f62c"/>
+<img src ="https://github.com/user-attachments/assets/7b6567d3-e8ca-4bf9-90d5-fc9bac6072bd"/>
+<img src ="https://github.com/user-attachments/assets/bf1d86e2-3473-494d-ab91-489860201be8"/>
+<img src ="https://github.com/user-attachments/assets/826dfa01-9a34-49b6-83e8-b1d84ac4f10c"/>
 
 
 
