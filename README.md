@@ -29,7 +29,27 @@ Bash
 <img src="https://github.com/user-attachments/assets/e18690ff-5764-4907-b8a8-0f178dad1592"/> 
 
 ```bash
-
+fdisk /dev/sdb
+# new partition 
+n
+# primary partition
+p
+# partition number
+1
+# default for first sector
+press enter
+# set size to 500M
++500M
+# change partition type
+t
+# select partition number
+1
+# Select LVM type
+8e
+# print partition table to verify
+p
+# write changes
+w
 
 ```
 
