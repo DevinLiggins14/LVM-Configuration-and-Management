@@ -12,8 +12,7 @@ Bash
 
 <h2>Environments Used </h2>
 
-- <b>CentOS Linux release 8.5.2111
- 10 </b>
+- <b>CentOS Stream release 9 release 5.14.0-503.el9.x86_64 </b>
 
 <h2>Project walk-through:</h2>
 <br/>
@@ -72,9 +71,32 @@ pvcreate /dev/sdb1
 <img src="https://github.com/user-attachments/assets/417662c3-b53c-445d-9ad5-8ab14521a023"/>
 
 
+## Step 4: Create the volume group 
 
+```Bash
+# Create VG vg99
+vgcreate vg99 /dev/sdb1
+```
 
+<img src="https://github.com/user-attachments/assets/f2ef23b3-a6e5-4257-9645-3304d4040b6d"/>
 
+## Step 5: Create a logical volume
+
+```Bash
+# Create a logical volume called data using 200M of vg99
+lvcreate -n data -L 200M vg99
+```
+
+<img src="https://github.com/user-attachments/assets/31bc0fee-1464-4766-808c-d56d7fb91b9a"/>
+<br/> Confirm: <br/>
+<img src="https://github.com/user-attachments/assets/eee8f526-570a-4ba6-81bf-24024d296a55"/>
+
+## Step 6: Create an ext4 filesystem on the logical volume
+
+```Bash
+# Create an ext4 FS on the data LV
+mkfs.ext4 /dev/mapper/vg99-data
+```
 
 
 
