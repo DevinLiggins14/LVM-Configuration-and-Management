@@ -1,0 +1,22 @@
+# Create a 500M partition on /dev/sdb
+fdisk /dev/sdb
+# new partition 
+n
+# primary partition
+p
+# partition number
+1
+# default for first sector
+press enter
+# set size to 500M
++500M
+# change partition type
+t
+# select partition number
+1
+# Select LVM type
+8e
+# print partition table to verify
+p
+# write changes
+w
