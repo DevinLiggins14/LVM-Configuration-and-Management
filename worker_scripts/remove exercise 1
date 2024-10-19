@@ -1,0 +1,20 @@
+# Unmount the /data filesystem if it's currently mounted
+umount /data
+# Remove the Logical Volume:
+lvremove /dev/vg99/data
+# Remove the Volume Group:
+vgremove vg99
+# Remove the Physical Volume:
+pvremove /dev/sdb1
+# Delete the Partition:
+fdisk /dev/sdb
+# Press d to delete the partition.
+# Select the partition number 1 for /dev/sdb1.
+# Press w to write changes and exit.
+# Verify the Changes:
+lvdisplay
+vgdisplay
+pvdisplay
+lsblk
+
+
