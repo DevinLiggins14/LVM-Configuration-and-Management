@@ -24,7 +24,7 @@ Bash
 ### **Prerequisites**  
 - At least 2GB RAM and 10GB disk space.
 - Add [Hard Disk to Virtual Machine](https://computingforgeeks.com/add-extra-hard-disk-to-virtualbox-vm/).  
-- Ensure you have root or sudo privileges to create and manage physical volumes, volume groups, and logical volumes. 
+- Root or sudo privileges to create and manage physical volumes, volume groups, and logical volumes. 
 
 
 ```bash
