@@ -195,9 +195,6 @@ mount /dev/mapper/myvg3-accounting /accounting
 ``` 
 
 ## Result:
-<img src="https://github.com/user-attachments/assets/e7049d77-278c-47c7-991f-366a19a7911b"/>
-<img src="https://github.com/user-attachments/assets/beee3054-4ef7-461c-bccd-14c8c3d1f62c"/>
-<img src ="https://github.com/user-attachments/assets/7b6567d3-e8ca-4bf9-90d5-fc9bac6072bd"/>
 <img src ="https://github.com/user-attachments/assets/bf1d86e2-3473-494d-ab91-489860201be8"/>
 <img src ="https://github.com/user-attachments/assets/826dfa01-9a34-49b6-83e8-b1d84ac4f10c"/>
 
