@@ -168,7 +168,7 @@ lsblk
 ## Part 2: Create Multiple Logical Volumes
 
 ```Bash
-# Create Logical Volume music on Volume Group myvg1 (400M, LV: 100M)
+# Create Logical Volume music on Volume Group myvg1 
 pvcreate /dev/sdb1
 vgcreate myvg1 /dev/sdb1
 lvcreate -n music -L 100M myvg1
@@ -176,7 +176,7 @@ mkfs.ext4 /dev/mapper/myvg1-music
 mkdir /music
 mount /dev/mapper/myvg1-music /music
 
-# Create Logical Volume flowers on Volume Group myvg2 (200M, LV: 150M)
+# Create Logical Volume flowers on Volume Group myvg2 
 pvcreate /dev/sdb2
 vgcreate myvg2 /dev/sdb2
 lvcreate -n flowers -L 150M myvg2
@@ -184,7 +184,7 @@ mkfs.ext4 /dev/mapper/myvg2-flowers
 mkdir /garden
 mount /dev/mapper/myvg2-flowers /garden
 
-# Create Logical Volume accounting on Volume Group myvg3 (600M, use all space)
+# Create Logical Volume accounting on Volume Group myvg3 
 pvcreate /dev/sdb3
 vgcreate myvg3 /dev/sdb3
 lvcreate -n accounting -l 100%FREE myvg3
