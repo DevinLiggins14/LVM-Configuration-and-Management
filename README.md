@@ -119,8 +119,27 @@ umount /data
 <img src="https://github.com/user-attachments/assets/22b28559-2e4a-484d-a16c-f1ef8dbc56a1"/>
 <img src="https://github.com/user-attachments/assets/acef934e-b1a2-4b5c-b74b-2937f6e4bddc"/>
 
+## Step 9: Add the filesystem to /etc/fstab for permanent mount
 
+```Bash
+# Use the VI text editor to modify /etc/fstab
+vi /etc/fstab
+# Add the following line:
+/dev/mapper/vg99-data /data ext4 defaults 0 0
+```
 
+<img src="https://github.com/user-attachments/assets/da3a185d-af58-4632-8ff5-dd702ec17695"/>
+
+## Step 10: Mount the partition using /etc/fstab entry
+
+```Bash
+# Mount the partition
+mount -a
+# Verify
+df -h
+```
+
+<img src="https://github.com/user-attachments/assets/c476c174-c5d0-4cd8-b78f-610fa19beb01"/>
 
 
 
