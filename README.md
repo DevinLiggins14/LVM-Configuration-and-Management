@@ -98,6 +98,28 @@ lvcreate -n data -L 200M vg99
 mkfs.ext4 /dev/mapper/vg99-data
 ```
 
+<img src="https://github.com/user-attachments/assets/6990cd10-99f8-4b7e-8b64-23c841d26c1c"/>
+
+## Step 7: Create a mount point and mount the filesystem
+
+```Bash
+# Create and mount the ext4 FS on /data
+mkdir /data
+mount /dev/mapper/vg99-data /data
+```
+
+## Step 8: Verify and unmount the filesystem
+
+```Bash
+# Verify the ext4 FS mounted on /data and unmount
+df -hT
+umount /data
+```
+
+<img src="https://github.com/user-attachments/assets/22b28559-2e4a-484d-a16c-f1ef8dbc56a1"/>
+<img src="https://github.com/user-attachments/assets/acef934e-b1a2-4b5c-b74b-2937f6e4bddc"/>
+
+
 
 
 
